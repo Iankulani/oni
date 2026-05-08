@@ -7,11 +7,10 @@ oni
 
 # How to clone the repo
 ```bash
-git clone
-
+git clone https://github.com/Iankulani/oni.git
 ```
 
 # How to run
 ```bash
-python
+python oni
 ```
