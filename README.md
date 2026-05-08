@@ -24,3 +24,6 @@ git clone https://github.com/Iankulani/oni.git
 ```bash
 python oni
 ```
+# Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Iankulani/oni&type=Date)](https://star-history.com/#Iankulani/oni&Date)
