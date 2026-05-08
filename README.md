@@ -22,32 +22,32 @@ ONI (オニ) is not merely a cybersecurity tool—it is a paradigm shift in how 
 
 This comprehensive cybersecurity command center integrates over 5,000 security commands, spanning everything from basic network reconnaissance to advanced exploitation techniques, all wrapped in a sleek, demonic interface that demands respect. Whether you are a Black Hat seeking to understand vulnerabilities, a Red Hat conducting authorized penetration tests, or a White Hat defending critical infrastructure, ONI becomes an extension of your will—a digital Oni that fights alongside you in the eternal battle for cyberspace supremacy.
 
-🎭 THE LEGEND OF ONI
+# 🎭 THE LEGEND OF ONI
 Mythological Origins
 In Japanese mythology, the Oni (鬼) are fearsome demons known for their immense strength, magical abilities, and dual nature. They punish the wicked, guard the gates of hell, yet can become protectors of temples and loyal servants to those who earn their respect. They are creatures of raw power, unpredictability, and absolute loyalty to their master.
 
 ONI the cybersecurity tool embodies these same characteristics:
 
-Mythological Trait	Cybersecurity Parallel
-Supernatural Strength	5000+ security commands at your fingertips
-Shapeshifting Ability	Multi-platform integration (Telegram, Discord, Slack, WhatsApp, iMessage, Signal)
-Demonic Cunning	Advanced social engineering and phishing suite
-Hellfire Breath	Real traffic generation and stress testing
-Protective Nature	Threat detection, IP blocking, security monitoring
-Loyalty to Master	Complete command history, audit trails, reporting
-Terror Inducing	Psychological impact on adversaries during red team exercises
-🔥 THE DEMON'S PURPOSE
+# Mythological Trait	Cybersecurity Parallel
+* Supernatural Strength	5000+ security commands at your fingertips
+* Shapeshifting Ability	Multi-platform integration (Telegram, Discord, Slack, WhatsApp, iMessage, Signal)
+* Demonic Cunning	Advanced social engineering and phishing suite
+* Hellfire Breath	Real traffic generation and stress testing
+* Protective Nature	Threat detection, IP blocking, security monitoring
+* Loyalty to Master	Complete command history, audit trails, reporting
+* Terror Inducing	Psychological impact on adversaries during red team exercises
+# 🔥 THE DEMON'S PURPOSE
 Why ONI Exists
 The digital world has become a battleground where nation-states, criminal organizations, hacktivists, and lone wolves clash daily. Traditional security tools are fragmented—you need Nmap for scanning, Metasploit for exploitation, Burp Suite for web testing, and dozens more tools for different tasks. This fragmentation creates inefficiency, slows response times, and leaves gaps in security postures.
 
-ONI unifies the battlefield.
+# ONI unifies the battlefield.
 
 Imagine commanding an entire cybersecurity arsenal from a single terminal. Imagine executing complex penetration tests from your phone via Telegram while commuting. Imagine your Discord server becoming a security operations center where commands flow like poetry and results appear like magic. Imagine launching social engineering campaigns, generating realistic traffic, spoofing identities, and detecting threats—all from one unified interface.
 
 This is ONI.
 
-🗡️ CORE CAPABILITIES
-1. The Command Arsenal (5000+ Security Commands)
+# 🗡️ CORE CAPABILITIES
+# 1. The Command Arsenal (5000+ Security Commands)
 ONI's command system is built like a demon's grimoire—ancient, powerful, and extensive. Every command is optimized for speed, reliability, and comprehensive output formatting.
 
 # Network Reconnaissance Commands
@@ -66,7 +66,7 @@ crt <domain>               - Certificate transparency log search
 shodan <query>             - Shodan IoT search engine integration
 censys <query>             - Censys internet-wide scan database
 Vulnerability Assessment
-text
+
 nikto <target>             - Complete web server vulnerability scanning
 nikto_ssl <target>         - SSL/TLS misconfiguration detection
 nikto_sql <target>         - SQL injection vulnerability scanning
@@ -253,20 +253,14 @@ ONI comes pre-loaded with 100+ professionally crafted phishing templates for:
 
 # Custom Templates:
 
-Generic VPN login (BYOD policies)
-
-IT Support Portal (help desk simulation)
-
-HR Benefits Portal (employee data harvesting)
-
-COVID-19 Health Screening (health data phishing)
-
-Software Update Portal (credential harvesting)
-
-Wi-Fi Captive Portal (rogue AP simulation)
-
-Credential Capture System
-python
+* Generic VPN login (BYOD policies)
+* IT Support Portal (help desk simulation)
+* HR Benefits Portal (employee data harvesting)
+* COVID-19 Health Screening (health data phishing)
+* Software Update Portal (credential harvesting)
+* Wi-Fi Captive Portal (rogue AP simulation)
+* Credential Capture System
+* 
 # Each captured credential includes:
 ```bash
 {
@@ -578,8 +572,6 @@ Cybersecurity Courses
 * Advanced persistent threat (APT) hunting
 
 # 📊 TECHNICAL ARCHITECTURE
-# System Requirements
-# Minimum (Container/Docker)
 * 1 CPU core
 
 * 1 GB RAM
