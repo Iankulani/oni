@@ -1,0 +1,94 @@
+# requirements.txt
+# Core Dependencies
+Flask==3.0.0
+flask-cors==4.0.0
+Werkzeug==3.0.1
+requests==2.31.0
+paramiko==3.4.0
+cryptography==41.0.7
+psutil==5.9.6
+python-dotenv==1.0.0
+
+# Database
+sqlite3-fts4==1.0.3
+
+# Networking & Security
+scapy==2.5.0
+python-nmap==0.7.1
+dnspython==2.4.2
+whois==0.9.3
+netaddr==0.9.0
+ipaddress==1.0.23
+
+# Web Framework
+aiohttp==3.9.1
+websockets==12.0
+
+# Bot Integrations
+discord.py==2.3.2
+telethon==1.34.0
+slack-sdk==3.27.0
+selenium==4.15.2
+webdriver-manager==4.0.1
+
+# Social Engineering
+qrcode==7.4.2
+pyshorteners==1.0.1
+
+# Data Processing
+pandas==2.1.3
+numpy==1.26.2
+matplotlib==3.8.2
+
+# Monitoring & Logging
+prometheus-client==0.19.0
+python-json-logger==2.0.7
+
+# Authentication & Security
+jwt==1.3.1
+bcrypt==4.0.1
+passlib==1.7.4
+
+# Additional Tools
+colorama==0.4.6
+tqdm==4.66.1
+rich==13.7.0
+click==8.1.7
+pyyaml==6.0.1
+jsonschema==4.20.0
+
+# Development & Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Encryption
+pycryptodome==3.19.0
+rsa==4.9
+
+# Keylogger (platform specific)
+pynput==1.7.6
+
+# OCR & Image Processing
+Pillow==10.1.0
+opencv-python==4.8.1.78
+
+# Google APIs
+google-auth==2.25.2
+google-api-python-client==2.108.0
+
+# Reporting
+jinja2==3.1.2
+markdown==3.5.1
+pdfkit==1.0.0
+weasyprint==60.2
+
+# Network Traffic Generation
+pycurl==7.45.2
+httpx==0.25.1
+
+# Proxy & Tunneling
+pyngrok==7.0.5
+cloudscraper==1.2.71

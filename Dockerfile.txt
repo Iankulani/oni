@@ -1,0 +1,89 @@
+# Dockerfile (Ubuntu-based for better compatibility)
+FROM ubuntu:22.04
+
+LABEL maintainer="Ian Carter Kulani"
+LABEL description="ONI - Cybersecurity Command Center"
+LABEL version="1.0.0"
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-dev \
+    python3-venv \
+    bash \
+    curl \
+    wget \
+    git \
+    nmap \
+    nikto \
+    hping3 \
+    tcpdump \
+    net-tools \
+    iproute2 \
+    iptables \
+    openssh-client \
+    openssh-server \
+    whois \
+    dnsutils \
+    dnsmasq \
+    macchanger \
+    arp-scan \
+    dsniff \
+    traceroute \
+    procps \
+    netcat \
+    socat \
+    jq \
+    vim \
+    nano \
+    sudo \
+    ca-certificates \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
+    rustc \
+    cargo \
+    linux-headers-generic \
+    libpcap-dev \
+    libpcre3-dev \
+    chromium-browser \
+    chromium-chromedriver \
+    xvfb \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir -r /tmp/requirements.txt
+
+# Create ONI user
+RUN useradd -m -s /bin/bash oni && \
+    echo "oni ALL=(ALL) NOPASSWD: /usr/sbin/iptables, /usr/sbin/arpspoof, /usr/sbin/dnsspoof, /usr/bin/macchanger" >> /etc/sudoers
+
+# Create directories
+RUN mkdir -p /opt/oni/data /opt/oni/logs /opt/oni/config /opt/oni/reports && \
+    chown -R oni:oni /opt/oni
+
+# Copy application
+COPY --chown=oni:oni . /opt/oni/
+WORKDIR /opt/oni
+
+# Make scripts executable
+RUN chmod +x /opt/oni/entrypoint.sh /opt/oni/setup.sh /opt/oni/install.sh
+
+# Switch to oni user
+USER oni
+
+# Expose ports
+EXPOSE 5000 8080 8081 8082
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:5000/ || exit 1
+
+ENTRYPOINT ["/opt/oni/entrypoint.sh"]
+CMD ["python3", "oni.py"]

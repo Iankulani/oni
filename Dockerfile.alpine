@@ -1,0 +1,83 @@
+# Dockerfile.alpine
+FROM alpine:3.19
+
+LABEL maintainer="Ian Carter Kulani"
+LABEL description="ONI - Cybersecurity Command Center"
+LABEL version="1.0.0"
+
+# Install system dependencies
+RUN apk update && apk upgrade && apk add --no-cache \
+    python3 \
+    py3-pip \
+    py3-virtualenv \
+    bash \
+    curl \
+    wget \
+    git \
+    nmap \
+    nmap-scripts \
+    nikto \
+    hping3 \
+    tcpdump \
+    net-tools \
+    iproute2 \
+    iptables \
+    openssh-client \
+    openssh-server \
+    whois \
+    bind-tools \
+    dnsmasq \
+    macchanger \
+    arp-scan \
+    dsniff \
+    traceroute \
+    procps \
+    netcat-openbsd \
+    socat \
+    jq \
+    vim \
+    nano \
+    sudo \
+    ca-certificates \
+    build-base \
+    python3-dev \
+    libffi-dev \
+    openssl-dev \
+    cargo \
+    linux-headers \
+    libpcap-dev \
+    pcre-dev \
+    && rm -rf /var/cache/apk/*
+
+# Install Python packages
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir -r /tmp/requirements.txt
+
+# Create ONI user
+RUN adduser -D -h /home/oni -s /bin/bash oni && \
+    echo "oni ALL=(ALL) NOPASSWD: /usr/sbin/iptables, /usr/sbin/arpspoof, /usr/sbin/dnsspoof, /usr/bin/macchanger" >> /etc/sudoers
+
+# Create directories
+RUN mkdir -p /opt/oni/data /opt/oni/logs /opt/oni/config /opt/oni/reports && \
+    chown -R oni:oni /opt/oni
+
+# Copy application
+COPY --chown=oni:oni . /opt/oni/
+WORKDIR /opt/oni
+
+# Make scripts executable
+RUN chmod +x /opt/oni/entrypoint.sh /opt/oni/setup.sh /opt/oni/install.sh
+
+# Switch to oni user
+USER oni
+
+# Expose ports
+EXPOSE 5000 8080 8081 8082
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:5000/ || exit 1
+
+ENTRYPOINT ["/opt/oni/entrypoint.sh"]
+CMD ["python3", "oni.py"]
