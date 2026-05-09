@@ -44,8 +44,6 @@ The digital world has become a battleground where nation-states, criminal organi
 
 Imagine commanding an entire cybersecurity arsenal from a single terminal. Imagine executing complex penetration tests from your phone via Telegram while commuting. Imagine your Discord server becoming a security operations center where commands flow like poetry and results appear like magic. Imagine launching social engineering campaigns, generating realistic traffic, spoofing identities, and detecting threats—all from one unified interface.
 
-This is ONI.
-
 # 🗡️ CORE CAPABILITIES
 # 1. The Command Arsenal (5000+ Security Commands)
 ONI's command system is built like a demon's grimoire—ancient, powerful, and extensive. Every command is optimized for speed, reliability, and comprehensive output formatting.
